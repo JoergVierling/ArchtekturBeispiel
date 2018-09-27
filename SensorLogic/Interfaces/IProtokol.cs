@@ -2,7 +2,7 @@
 
 namespace SensorLogic.Interfaces
 {
-   public interface IProtokolAlert
+   public interface IProtokol
    {
        void ProtokollAlert(DateTime date,string message);
    }

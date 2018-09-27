@@ -8,7 +8,7 @@ using SensorLogic.Interfaces;
 
 namespace FileSaver
 {
-    public class FileAlert : IProtokolAlert
+    public class FileAlert : IProtokol
     {
         private string _path;
         private string _fileName;

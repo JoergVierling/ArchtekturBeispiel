@@ -4,7 +4,7 @@ using SensorLogic.Interfaces;
 
 namespace ConsolOutput
 {
-    public class Output : IAlertOperation
+    public class Output : IOutput
     {
         public void GiveAlert(string message)
         {

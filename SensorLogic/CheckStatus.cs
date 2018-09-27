@@ -8,10 +8,10 @@ namespace SensorLogic
     public class CheckStatus
     {
         private List<ISensor> _sensors;
-        private IAlertOperation _alert;
-        private IProtokolAlert _protokolAlert;
+        private IOutput _alert;
+        private IProtokol _protokolAlert;
 
-        public CheckStatus(List<ISensor> sensoren, IAlertOperation alert, IProtokolAlert protokolAlert)
+        public CheckStatus(List<ISensor> sensoren, IOutput alert, IProtokol protokolAlert)
         {
             _sensors = sensoren;
             _alert = alert;
