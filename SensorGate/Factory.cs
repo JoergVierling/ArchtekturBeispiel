@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Mime;
+using FileSaver;
 using SensorGenerator;
 using SensorLogic;
 using SensorLogic.Interfaces;
@@ -12,9 +15,10 @@ namespace SensorGate
         public static CheckStatus Build()
         {
             List<ISensor> sensors = Generator.Generate().ToList();
-            var output = new ConsoleA();
+            ConsoleA output = new ConsoleA();
+            var protokolEngine = new FileAlert(System.Environment.CurrentDirectory);
 
-            CheckStatus logic = new CheckStatus(sensors, output);
+            CheckStatus logic = new CheckStatus(sensors, output, protokolEngine);
 
             return logic;
         }

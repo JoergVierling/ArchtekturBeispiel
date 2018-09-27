@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CheckStatus.cs" />
     <Compile Include="Interfaces\IAlertOperation.cs" />
+    <Compile Include="Interfaces\IProtokolAlert.cs" />
     <Compile Include="Interfaces\ISensor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -59,6 +59,10 @@
       <Project>{535e8d48-fb7d-45eb-af06-2fefb751ac81}</Project>
       <Name>ExceptionConsole</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Protokol\FileSaver\FileSaver.csproj">
+      <Project>{40668C93-11CC-4975-A7F9-F6BA628B7AE8}</Project>
+      <Name>FileSaver</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SensorLogic\SensorLogic.csproj">
       <Project>{9e3e11e5-e058-461c-9353-c177fb137c2a}</Project>
       <Name>SensorLogic</Name>

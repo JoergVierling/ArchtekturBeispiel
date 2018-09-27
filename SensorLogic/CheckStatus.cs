@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using SensorLogic.Interfaces;
 
 namespace SensorLogic
@@ -8,11 +9,13 @@ namespace SensorLogic
     {
         private List<ISensor> _sensors;
         private IAlertOperation _alert;
-        
-        public CheckStatus(List<ISensor> sensoren, IAlertOperation alert)
+        private IProtokolAlert _protokolAlert;
+
+        public CheckStatus(List<ISensor> sensoren, IAlertOperation alert, IProtokolAlert protokolAlert)
         {
             _sensors = sensoren;
             _alert = alert;
+            _protokolAlert = protokolAlert;
         }
 
         public void Operate(double grenzWert)
@@ -29,13 +32,18 @@ namespace SensorLogic
                     alertedSensors.Add(sensor);
                 }
             }
+
+            if (alertedSensors.Any())
+            {
+                ProtokollSensors(alertedSensors);
+            }
         }
 
-        //public void ProtokollSensors(List<ISensor> sensors)
-        //{
-        //    var message = $"Eswurden {sensors.Count} ausgelöst mit den Nachrichten \"{string.Join(", ", sensors)}\"";
+        public void ProtokollSensors(List<ISensor> sensors)
+        {
+            var message = $"Eswurden {sensors.Count} ausgelöst mit den Nachrichten \"{string.Join(", ", sensors)}\"";
 
-        //    _protokolAlert.ProtokollAlert(DateTime.Now, message);
-        //}
+            _protokolAlert.ProtokollAlert(DateTime.Now, message);
+        }
     }
 }
